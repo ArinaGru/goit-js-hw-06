@@ -1,15 +1,14 @@
-
 const form = document.querySelector(".login-form");
 
 const onFormSubmit = (event) => {
   event.preventDefault();
-  const formElements = event.currentTarget.elements;
-  if (formElements.email.value === "" || formElements.password.value === "") {
+  const { email, password } = event.currentTarget.elements;
+  if (email.value === "" || password.value === "") {
     alert("Bсе поля должны быть заполнены!");
   } else {
     const obj = {
-      email: formElements.email.value,
-      password: formElements.password.value,
+      email: email.value,
+      password: password.value,
     };
     console.log(obj);
   }
